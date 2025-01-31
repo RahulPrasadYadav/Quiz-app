@@ -18,3 +18,11 @@ Responsive Design: Works seamlessly on all devices.
 
 
 video Link : https://drive.google.com/drive/folders/19FjHtZjVgYhmg_Y9yNBpSFHJDp-mi01y
+
+
+
+I wanted to inform you that the API service I have been using for our project (https://api.jsonserve.com/Uw5CrX) is currently not working, and I have encountered difficulties in retrieving data. As a result, I will be switching to another API to ensure the continued progress of the project.
+
+If you could kindly give me some time, I plan to build an even better quiz app with improved features and functionality. I am confident that this update will provide a much more seamless and engaging experience.
+
+I appreciate your understanding and patience while I work on this. Please feel free to reach out if you have any questions or concerns.
