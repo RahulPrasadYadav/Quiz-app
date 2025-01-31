@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+   <!-- Theme Toggle -->
+   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+   <!-- Avatar and Streak -->
+   <div class="avatar-container">
+       <div class="avatar" id="userAvatar">👤</div>
+       <div class="streak-counter">
+           🔥 <span id="streakCount">0</span>
+       </div>
+   </div>
+
+   <!-- Live Feedback -->
+   <div class="live-feedback" id="liveFeedback"></div>
+
+   <!-- Achievement Popup -->
+   <div class="achievement-popup" id="achievementPopup">
+       <div class="trophy">🏆</div>
+       <div>
+           <h3>Achievement Unlocked!</h3>
+           <p id="achievementText"></p>
+       </div>
+   </div>
+
+   <!-- Quiz Structure -->
+   <div class="container">
+       <!-- Start Screen -->
+       <div class="start-screen" id="startScreen">
+           <h1>Quiz Apss</h1>
+           <p>Test your knowledge across various topics!</p>
+           <button class="start-btn" onclick="startGame()">
+               🚀 Start Quiz
+           </button>
+       </div>
+
+       <!-- Quiz Interface -->
+       <div class="quiz-header hidden" id="quizHeader">
+           <div class="timer-box">
+               ⏳ <span id="timer">00:00</span>
+           </div>
+           <div class="score-box">
+               🏆 <span id="score">0</span>
+           </div>
+       </div>
+
+       <div class="quiz-card hidden" id="quizCard">
+           <div class="powerups-container">
+               <div class="powerup" onclick="usePowerup('doublePoints')">
+                   ✨ Double Points (10s)
+               </div>
+               <div class="powerup" onclick="usePowerup('timeFreeze')">
+                   ⏸️ Add 30 Seconds
+               </div>
+           </div>
+           <div class="progress-bar" id="progressBar"></div>
+           <div class="question" id="question"></div>
+           <div class="options-container" id="options"></div>
+           <div class="navigation-btns">
+               <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">
+                   ← Previous
+               </button>
+               <button class="nav-btn" id="nextBtn" onclick="nextQuestion()">
+                   Next →
+               </button>
+           </div>
+       </div>
+
+       <!-- Result Screen -->
+       <div class="result-container hidden" id="resultContainer">
+           <h2>Quiz Completed! 🎉</h2>
+           <div class="final-score" id="finalScore"></div>
+           <p>You've shown amazing knowledge!</p>
+           <button class="nav-btn" onclick="restartQuiz()">
+               🔄 Play Again
+           </button>
+       </div>
+   </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

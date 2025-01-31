@@ -1,0 +1,349 @@
+:root {
+  --primary: #6366f1;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --text: #ffffff;
+  --theme-toggle-size: 40px;
+  --avatar-size: 50px;
+  --neumorphic-shadow: 5px 5px 10px #0a0e17, -5px -5px 10px #14203d;
+}
+
+/* Light Theme Variables */
+.light-theme {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --neumorphic-shadow: 5px 5px 10px #d1d5db, -5px -5px 10px #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Start Screen */
+.start-screen {
+  background: var(--surface);
+  padding: 4rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: var(--neumorphic-shadow);
+  margin: 2rem auto;
+}
+
+.start-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.start-btn {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 0.75rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Quiz Interface */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  box-shadow: var(--neumorphic-shadow);
+}
+
+.timer-box, .score-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quiz-card {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--neumorphic-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.options-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.light-theme.option-label:hover{
+  background-color: red;
+}
+
+.option-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+.option-label.correct {
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid var(--success);
+}
+
+.option-label.wrong {
+  background: rgba(239, 68, 68, 0.15);
+  border: 2px solid var(--danger);
+}
+
+.radio-input {
+width: 20px;
+height: 20px;
+border: 2px solid var(--radio-border-color, rgba(255, 255, 255, 0.3)); /* Default for dark mode */
+border-radius: 50%;
+display: grid;
+place-items: center;
+flex-shrink: 0;
+}
+
+/* Light mode border color */
+.light-theme .radio-input {
+--radio-border-color: rgba(0, 0, 0, 0.3); /* Light mode border color */
+}
+
+.radio-input::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+input[type="radio"]:checked + .radio-input::after {
+  transform: scale(1);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Navigation Buttons */
+.navigation-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.nav-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: var(--primary);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Result Screen */
+.result-container {
+  background: var(--surface);
+  padding: 4rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: var(--neumorphic-shadow);
+}
+
+.result-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.final-score {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 2rem 0;
+}
+
+/* Confetti Animation */
+.confetti {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  animation: confetti 3s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes confetti {
+  0% { transform: translateY(-100vh) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
+/* New Features */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--neumorphic-shadow);
+  z-index: 1000;
+}
+
+.avatar-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  background: var(--primary);
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  box-shadow: var(--neumorphic-shadow);
+}
+
+.streak-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.live-feedback {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.powerups-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.powerup {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.powerup:hover {
+  transform: translateY(-2px);
+}
+
+.achievement-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
